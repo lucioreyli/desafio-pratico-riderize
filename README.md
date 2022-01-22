@@ -13,17 +13,17 @@ Algumas funções não estão configuradas para serem executadas em um dispositi
 ### Criar o arquivo `local.properties` com a seguinte linha:
 
 em Windows
-```json
+```bash
 sdk.dir = C:\\Users\\NOME DE USUÁRIO\\AppData\\Local\\Android\\sdk
 ```
 
 em MacOS
-```json
+```bash
 sdk.dir = /Users/NOME DE USUÁRIO/Library/Android/sdk
 ```
 
 em Linux
-```json
+```bash
 sdk.dir = /home/NOME DE USUÁRIO/Android/Sdk
 ```
 
