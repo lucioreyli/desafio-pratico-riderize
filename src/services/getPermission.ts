@@ -1,4 +1,5 @@
 import { Alert, PermissionsAndroid } from 'react-native';
+import Geolocation, { GeoCoordinates } from 'react-native-geolocation-service';
 
 export async function requestAcessPermission(): Promise<boolean> {
   const granted = await PermissionsAndroid.request(
@@ -12,4 +13,15 @@ export async function requestAcessPermission(): Promise<boolean> {
     Alert.alert('Desafio Riderize 🚵', 'Para funcionar corretamente\no app precisa da sua permissão.')
     return false;
   }
+}
+
+export const handleGetCurrentPosition = (
+  setPosition: (value: React.SetStateAction<GeoCoordinates>) => void
+) => {
+  Geolocation.getCurrentPosition(({ coords }) => {
+    if (coords)
+      setPosition(coords)
+  }, () => { },
+    { enableHighAccuracy: true, maximumAge: 10000 }
+  )
 }

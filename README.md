@@ -77,7 +77,7 @@ Adicione a tag `<meta-data />` dentro da tag `<application>` com a `API_KEY`:
 ## Referências
 
 ### Java
-JDK - versão utilizada: 11.0.8 - disponível em [OpenLogic/OpenJDK](https://www.openlogic.com/openjdk-downloads)
+JDK - versão utilizada: 11.0.8+10 - disponível em [OpenLogic/OpenJDK](https://www.openlogic.com/openjdk-downloads)
 
 ### Mapa
 

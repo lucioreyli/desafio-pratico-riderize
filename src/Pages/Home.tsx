@@ -15,16 +15,16 @@ import { Header } from '~/components/Header';
 import { Map } from '~/components/Map';
 import { colors } from '~/styles/colors';
 import { MapButtons } from '~/components/MapButtons';
-import { requestAcessPermission } from '~/services/getPermission';
+import { handleGetCurrentPosition, requestAcessPermission } from '~/services/getPermission';
 import { ModalContent } from '~/components/ModalContent';
 import { dimensions } from '~/constants/dimensions';
 import { BottomNavbar } from '~/components/BottomNavbar';
 import { styles } from '~/styles/styles';
 import { getSensor } from '~/services/getSensor';
 import { stopwatch } from '~/services/stopwatch';
-import { defaultPosition } from './constants/defaultPosition';
+import { defaultPosition } from '../constants/defaultPosition';
 
-export const App = () => {
+export const Home = () => {
   const [position, setPosition] = useState<Geolocation.GeoCoordinates>(defaultPosition)
   const [gpsGranted, setGpsGranted] = useState<boolean>(false)
   const [time, setTime] = useState<number>(0)
@@ -35,18 +35,10 @@ export const App = () => {
   const handleGetLocation = () => {
     requestAcessPermission().then((permission) => {
       if (permission || gpsGranted) {
-        handleGetCurrentPosition()
+        handleGetCurrentPosition(setPosition)
         setGpsGranted(permission)
       }
     })
-  }
-
-  const handleGetCurrentPosition = () => {
-    Geolocation.getCurrentPosition(({ coords }) => {
-      setPosition(coords)
-    }, () => { },
-      { enableHighAccuracy: true, maximumAge: 10000 }
-    )
   }
 
   const startCounter = () => {
