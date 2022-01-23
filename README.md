@@ -73,6 +73,7 @@ Adicione a tag `<meta-data />` dentro da tag `<application>` com a `API_KEY`:
 - Moto G (5) - 8.1.0;
 - Redmi 7 - 10.0;
 - moto e6s - 9.0;
+- Pixel 3 - 7.1.1;
 
 ## Referências
 

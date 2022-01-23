@@ -58,9 +58,15 @@ export const Home = () => {
     return () => clearInterval(interval.current as NodeJS.Timeout)
   }, [modalOpened]);
 
+  useEffect(() => handleGetLocation(), [])
+
   useEffect(() => {
-    handleGetLocation()
-  }, [])
+    if (gpsGranted) {
+      setInterval(() => {
+        handleGetCurrentPosition(setPosition)
+      }, 1000)
+    }
+  }, [gpsGranted])
 
 
   return (
