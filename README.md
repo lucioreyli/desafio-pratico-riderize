@@ -64,9 +64,15 @@ Adicione a tag `<meta-data />` dentro da tag `<application>` com a `API_KEY`:
 
 - [x] Cronômetro;
 
+- [x] Mapa segue a localização do usuário;
+
+- [x] Acessar acelerômetro do dispositivo;
+
+- [x] Fixar rotação de tela (retrato/portrait);
+
 - [ ] Mudar estilo do mapa;
 
-- [ ] Acessar acelerômetro do dispositivo;
+- [ ] Cálculo de velocidade para km/h
   
 
 ## Dispositivos testados / Versão do Android
@@ -109,7 +115,7 @@ JDK - versão utilizada: 11.0.8+10 - disponível em [OpenLogic/OpenJDK](https://
 
 [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 
-  
+[react-native-responsive-fontsize](https://github.com/heyman333/react-native-responsive-fontSize)
   
 
 [maps]: https://console.cloud.google.com/google/maps-apis

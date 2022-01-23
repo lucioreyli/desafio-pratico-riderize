@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { Text, View } from "react-native"
-import MapView from "react-native-maps";
+import MapView, { Region } from "react-native-maps";
 import { colors } from "~/styles/colors";
 import { styles } from "./styles"
 import Geolocation from 'react-native-geolocation-service';
@@ -8,12 +8,21 @@ import Geolocation from 'react-native-geolocation-service';
 export const Map: React.FC<{
   gpsEnabled: Boolean,
   position: Geolocation.GeoCoordinates,
+  mapStyle?: string,
 }> = ({
   gpsEnabled,
-  position
+  position,
+  mapStyle = 'standart'
 }) => {
 
     const map = useRef(null)
+
+    const regionOptions: Region | undefined = {
+      latitude: position.latitude,
+      longitude: position.longitude,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    }
 
     return (
       <View style={[styles.container, (!gpsEnabled || !position) && {
@@ -32,18 +41,8 @@ export const Map: React.FC<{
                 userInterfaceStyle="light"
 
                 /* Definir a localização inicial */
-                initialRegion={{
-                  latitude: position.latitude,
-                  longitude: position.longitude,
-                  latitudeDelta: 0.0922,
-                  longitudeDelta: 0.0421,
-                }}
-                region={{
-                  latitude: position.latitude,
-                  longitude: position.longitude,
-                  latitudeDelta: 0.0922,
-                  longitudeDelta: 0.0421,
-                }}
+                initialRegion={regionOptions}
+                region={regionOptions}
 
                 /*Evitar que o usuário gire em outras perspectivas do mapa*/
                 zoomTapEnabled={false}

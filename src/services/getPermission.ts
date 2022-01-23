@@ -1,5 +1,7 @@
-import { Alert, PermissionsAndroid } from 'react-native';
+import { Alert, LogBox, PermissionsAndroid } from 'react-native';
 import Geolocation, { GeoCoordinates } from 'react-native-geolocation-service';
+
+LogBox.ignoreLogs(['new NativeEventEmitter'])
 
 export async function requestAcessPermission(): Promise<boolean> {
   const granted = await PermissionsAndroid.request(
@@ -8,7 +10,8 @@ export async function requestAcessPermission(): Promise<boolean> {
   if (granted === PermissionsAndroid.RESULTS.GRANTED) {
     return true;
   } else {
-    Alert.alert('Desafio Riderize 🚵', 'Para funcionar corretamente\no app precisa da sua permissão.')
+    Alert.alert('Desafio Riderize 🚵',
+      'Para funcionar corretamente\no app precisa da sua permissão.')
     return false;
   }
 }

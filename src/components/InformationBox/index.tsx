@@ -6,9 +6,9 @@ import { styles } from "./style"
 export const InformationContent: React.FC<
   {
     time: number,
-    speed?: any,
+    speed: number,
   }
-> = ({ time, speed }) => {
+> = ({ time, speed = 0 }) => {
 
   return (
     <View style={styles.informationContainer}>
@@ -26,7 +26,7 @@ export const InformationContent: React.FC<
           velocidade (km/h)
         </Text>
         <Text style={styles.informationText}>
-          {speed ? speed : '31.1'}
+          {speed ? speed : 'N/A'}
         </Text>
       </View>
     </View>

@@ -12,8 +12,9 @@ export const ModalContent: React.FC<
   {
     stopCounter: () => void,
     time: number,
+    speed: number
   }
-> = ({ stopCounter, time, ...rest }) => {
+> = ({ stopCounter, time, speed, ...rest }) => {
 
   return (
     <View style={styles.container}>
@@ -27,7 +28,7 @@ export const ModalContent: React.FC<
         <FormatedTime time={time} />
       </Text>
 
-      <InformationContent time={time} speed={undefined} />
+      <InformationContent time={time} speed={speed.toFixed()} />
 
       <CancelButton title='Parar' onPress={stopCounter} />
     </View>
