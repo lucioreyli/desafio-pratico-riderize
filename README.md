@@ -13,16 +13,19 @@ Algumas funções não estão configuradas para serem executadas em um dispositi
 ### Criar o arquivo `local.properties` com a seguinte linha:
 
 em Windows
+
 ```bash
 sdk.dir = C:\\Users\\NOME DE USUÁRIO\\AppData\\Local\\Android\\sdk
 ```
 
 em MacOS
+
 ```bash
 sdk.dir = /Users/NOME DE USUÁRIO/Library/Android/sdk
 ```
 
 em Linux
+
 ```bash
 sdk.dir = /home/NOME DE USUÁRIO/Android/Sdk
 ```
@@ -96,7 +99,6 @@ JDK - versão utilizada: 11.0.8+10 - disponível em [OpenLogic/OpenJDK](https://
 
 [Maps JavaScript API](https://console.cloud.google.com/marketplace/product/google/maps-backend.googleapis.com)
 
-  
 
 ### Localização / Sensores
 
@@ -104,7 +106,6 @@ JDK - versão utilizada: 11.0.8+10 - disponível em [OpenLogic/OpenJDK](https://
 
 [react-native-sensors](https://github.com/react-native-sensors/react-native-sensors)
 
-  
 
 ### Componentes / Estilização
 
